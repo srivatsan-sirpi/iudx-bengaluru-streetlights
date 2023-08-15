@@ -7,6 +7,8 @@ import street_to_device from './streetToDevice.json' assert { type: "json"};
 let map;
 const { GoogleMap } = await google.maps.importLibrary("maps");
 const { AdvancedMarkerView } = await google.maps.importLibrary("marker");
+const { AdvancedMarkerElement } = await google.maps.importLibrary("marker");
+
 const {encoding} = await google.maps.importLibrary("geometry");
 const geocoder = new google.maps.Geocoder();
 let streetToDeviceMap = new Map();
@@ -25,26 +27,50 @@ async function initMap() {
     zoom: 15,
     center: latlng_blr
   }
-  var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+  map = new google.maps.Map(document.getElementById("map"), mapOptions);
   
   street_light_data.forEach(street_lamp => {
 
   var latlng = new google.maps.LatLng(street_lamp.location_coordinates[1],street_lamp.location_coordinates[0]);
+  //var marker = new google.maps.Marker({
+  //    position: latlng,
+  //    title:street_lamp.deviceID
+  //});
   
-  var marker = new google.maps.Marker({
+  /*var marker = new google.maps.Marker({
       position: latlng,
       title:street_lamp.deviceID
-  });
-  marker.setMap(map);
+  });*/
+  //marker.setMap(map);
   deviceToLocationMap.set(street_lamp.deviceID, street_lamp.location_coordinates);
 });
 }
+
+function addMarker(latLng, color) {
+  let url = "images/";
+  url = url + color + ".png";
+
+  let marker = new google.maps.Marker({
+    map: map,
+    position: latLng,
+    icon: url    
+  });
+  marker.setMap(map);
+
+};
+
+
+
+
+
+
+
 
 function compute_distance(initial_position, dest_position){  
   var destCord = new google.maps.LatLng(initial_position);
   var srcCord = new google.maps.LatLng (dest_position);
   var distance = google.maps.geometry.spherical.computeDistanceBetween(destCord, srcCord)
-  console.log(distance);
+  //console.log(distance);
   return distance;
   
 }
@@ -59,14 +85,39 @@ async function compute_power(){
 
    let device_energy = new Map();
    energy_consumed_data.forEach(device_record => {
-      var total_power = device_energy.get(device_rec9ord.deviceID);
+      var total_power = device_energy.get(device_record.deviceID);
       if (!total_power) {
         total_power = 0;
       }
       device_energy.set(device_record.deviceID, device_record.powerConsumption + total_power);
-
    });
-}
+   device_energy.forEach(function(value, key) {
+      console.log("Device ID " + key + " total Power: " + value);
+      street_light_data.forEach(record => {
+
+        var latlng = new google.maps.LatLng(record.location_coordinates[1],record.location_coordinates[0]);
+
+        if (key === record.deviceID) {
+          if (value === 0) {
+            addMarker(latlng, "grey")
+          }
+          else if (value > 0 && value < 801) {
+            addMarker(latlng, "yellow")
+          }
+          else if (value > 800 && value < 1701) {
+            addMarker(latlng, "orange")
+          }
+          else {
+            addMarker(latlng, "red")
+          }
+
+          }
+        })
+      })
+
+   }
+
+
 
 
 function map_to_street(latLng, deviceID){
@@ -109,7 +160,7 @@ function map_to_street(latLng, deviceID){
 
 async function reverse_geocode(lowIndex, highIndex){
   var counter = 0;
-  console.log('total streets ' + street_light_data.length);
+  //console.log('total streets ' + street_light_data.length);
   for (let i = lowIndex; i <= highIndex; i++) {
     const geocoder = new google.maps.Geocoder();
 
@@ -140,21 +191,22 @@ function computeMinDistDevice(listOfLights) {
       }
        
     }
-    console.log(listOfLights[j]);
-    console.log(' the minimum distance was '+ min_distance); 
+    //console.log(listOfLights[j]);
+    //console.log(' the minimum distance was '+ min_distance); 
     if (listOfLights.length > 1){
       counter = counter + 1;
       total_min_dist = total_min_dist + min_distance;
     }
-    console.log('counter is ' + counter)
+    //console.log('counter is ' + counter)
     
   }    
 }
 
 
+
 initMap();
 //compute_distance();
-//compute_power();
+compute_power();
 /*reverse_geocode(0, 299);
 setTimeout(() => {
   console.log('after a min');
@@ -169,7 +221,7 @@ setTimeout(() => {
 
 var loadedStrDeviceMap = new Map(Object.entries(street_to_device));
 
-console.log('before all min computation');
+//console.log('before all min computation');
 let total_distance = 0;
 let min_distance = [];
 let total_devices = 0;
@@ -179,4 +231,6 @@ loadedStrDeviceMap.forEach(function(value, key) {
   total_devices = total_devices + value.length;
   computeMinDistDevice(value);
 })
-console.log('average is '+ (total_min_dist/counter));
+console.log('average distance is '+ (total_min_dist/counter));
+//21.234865686762436
+//ddMarker({lat: -34.597, lng: 150.844}, "orange");
