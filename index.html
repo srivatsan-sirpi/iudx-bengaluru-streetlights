@@ -1,31 +1,274 @@
 <!DOCTYPE html>
-<!--
- @license
- Copyright 2019 Google LLC. All Rights Reserved.
- SPDX-License-Identifier: Apache-2.0
--->
+
 <html>
-  <head>
-    <title>Street Lights Info</title>
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+api
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+	<title>IUDX Ambulance Data Stories</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="assets/css/style.css">
+	<!-- Magnific Popup core CSS file -->
+	<link rel="stylesheet" href="./assets/magnific-popup/magnific-popup.css">
+	<!-- jQuery 1.7.2+ or Zepto.js 1.0+ -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+	<script>
+		(g=>{var h,a,k,p="The Google Maps JavaScript API",c="google",l="importLibrary",q="__ib__",m=document,b=window;b=b[c]||(b[c]={});var d=b.maps||(b.maps={}),r=new Set,e=new URLSearchParams,u=()=>h||(h=new Promise(async(f,n)=>{await (a=m.createElement("script"));e.set("libraries",[...r]+"");for(k in g)e.set(k.replace(/[A-Z]/g,t=>"_"+t[0].toLowerCase()),g[k]);e.set("callback",c+".maps."+q);a.src=`https://maps.${c}apis.com/maps/api/js?`+e;d[q]=f;a.onerror=()=>h=n(Error(p+" could not load."));a.nonce=m.querySelector("script[nonce]")?.nonce||"";m.head.append(a)}));d[l]?console.warn(p+" only loads once. Ignoring:",g):d[l]=(f,...n)=>r.add(f)&&u().then(()=>d[l](f,...n))})({
+		  key: "AIzaSyAKZ95aAaBsqaTVAgPhE8gcbgOBdABZzOU",
+		  // Add other bootstrap parameters as needed, using camel case.
+		  // Use the 'v' parameter to indicate the version to load (alpha, beta, weekly, etc.)
+		});
+	  </script>
+</head>
 
-    <link rel="stylesheet" type="text/css" href="./style.css" />
-    <script>
-  (g=>{var h,a,k,p="The Google Maps JavaScript API",c="google",l="importLibrary",q="__ib__",m=document,b=window;b=b[c]||(b[c]={});var d=b.maps||(b.maps={}),r=new Set,e=new URLSearchParams,u=()=>h||(h=new Promise(async(f,n)=>{await (a=m.createElement("script"));e.set("libraries",[...r]+"");for(k in g)e.set(k.replace(/[A-Z]/g,t=>"_"+t[0].toLowerCase()),g[k]);e.set("callback",c+".maps."+q);a.src=`https://maps.${c}apis.com/maps/api/js?`+e;d[q]=f;a.onerror=()=>h=n(Error(p+" could not load."));a.nonce=m.querySelector("script[nonce]")?.nonce||"";m.head.append(a)}));d[l]?console.warn(p+" only loads once. Ignoring:",g):d[l]=(f,...n)=>r.add(f)&&u().then(()=>d[l](f,...n))})({
-    key: "AIzaSyAKZ95aAaBsqaTVAgPhE8gcbgOBdABZzOU",
-    // Add other bootstrap parameters as needed, using camel case.
-    // Use the 'v' parameter to indicate the version to load (alpha, beta, weekly, etc.)
-  });
-</script>
-    <script type="module" src="./index.js"></script>
-  </head>
-  <body>
-    <h3> </h3>
-    <!--The div element for the map -->
-    <div id="map"></div>
+<body>
+	    <!-- prettier-ignore -->
+		<script>(g=>{var h,a,k,p="The Google Maps JavaScript API",c="google",l="importLibrary",q="__ib__",m=document,b=window;b=b[c]||(b[c]={});var d=b.maps||(b.maps={}),r=new Set,e=new URLSearchParams,u=()=>h||(h=new Promise(async(f,n)=>{await (a=m.createElement("script"));e.set("libraries",[...r]+"");for(k in g)e.set(k.replace(/[A-Z]/g,t=>"_"+t[0].toLowerCase()),g[k]);e.set("callback",c+".maps."+q);a.src=`https://maps.${c}apis.com/maps/api/js?`+e;d[q]=f;a.onerror=()=>h=n(Error(p+" could not load."));a.nonce=m.querySelector("script[nonce]")?.nonce||"";m.head.append(a)}));d[l]?console.warn(p+" only loads once. Ignoring:",g):d[l]=(f,...n)=>r.add(f)&&u().then(()=>d[l](f,...n))})
+			({key: "AIzaSyAKZ95aAaBsqaTVAgPhE8gcbgOBdABZzOU", v: "weekly"});</script>
 
-    <!-- prettier-ignore -->
-    <script>(g=>{var h,a,k,p="The Google Maps JavaScript API",c="google",l="importLibrary",q="__ib__",m=document,b=window;b=b[c]||(b[c]={});var d=b.maps||(b.maps={}),r=new Set,e=new URLSearchParams,u=()=>h||(h=new Promise(async(f,n)=>{await (a=m.createElement("script"));e.set("libraries",[...r]+"");for(k in g)e.set(k.replace(/[A-Z]/g,t=>"_"+t[0].toLowerCase()),g[k]);e.set("callback",c+".maps."+q);a.src=`https://maps.${c}apis.com/maps/api/js?`+e;d[q]=f;a.onerror=()=>h=n(Error(p+" could not load."));a.nonce=m.querySelector("script[nonce]")?.nonce||"";m.head.append(a)}));d[l]?console.warn(p+" only loads once. Ignoring:",g):d[l]=(f,...n)=>r.add(f)&&u().then(()=>d[l](f,...n))})
-        ({key: "AIzaSyAKZ95aAaBsqaTVAgPhE8gcbgOBdABZzOU", v: "weekly"});</script>
-  </body>
+	<!-- First page-->
+	<div id="herobg">
+
+		<!-- Nav bar-->
+		<div class="navbar font-bold topnav" id="topNavBar">
+			<img id="navlogo" src="assets/images/iudx_logo.svg">
+			<ul style="margin-right:5vw">
+				<li><a href="/about.html">About The Project</a></li>
+				<li><a href="/" class="active">Bengaluru</a></li>
+			</ul>
+		</div>
+
+		<div id="hero">
+			<div data-aos="fade-up" class="fontpoppins fontdarkblue">
+				<div>
+					<span class="heroheader">
+						<div class="herocontent">
+							Want to know more about street lights in Electronic City Bengaluru, Karnataka in
+							India ?
+						</div>
+						<br>
+						<span style="font-size:max(3.5vw,27px);font-weight: 800;"> Welcome to </span> <br>
+						<span style="font-size:max(3.0vw,21px);font-weight: 800;"> Bengaluru Street Light Data Stories
+						</span> <br>
+						<button class="hero-button" style="margin-top: 0px;margin-bottom: 4rem;" onclick=" window.open('https://srivatsansudhir.wordpress.com/2024/04/09/the-insufficient-illumination-of-bengaluru/','_blank')">Read story!</button>
+				</div>
+			</div>
+			<div>
+				<img src="assets/images/street_light_background.jpg" class="heroimg">
+			</div>
+		</div>
+	</div>
+
+	<!-- Map bagckground and amulance container -->
+	<div id="section1">
+		<div class="road"
+			style="background-image: url(/assets/images/main\ road\ w\ crossing.svg);background-position: center; width: 100vw;/* height: 430rem; */ background-repeat: repeat-y;">
+			<div class="relative">
+				<img class="ambulance" src="assets/images/car_topview.svg">
+			</div>
+
+			<div id="ambulancedatastories">
+
+				<div data-aos="zoom-in-right" data-aos-anchor-placement="top-center" class="numberpopup">
+					<!-- 1 -->
+					
+
+					
+
+
+					<!-- <img src="/assets/images/plots/plot_indiatrends.png"
+							href="/assets/images/plots/plot_indiatrends.png" class="img-popout"
+							title="Trends in no. of accidents, fatalities and persons injured from 2016 to 2021"> -->
+					<!-- <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless"
+							src="/assets/plotlyjs/trends.html" height="525" width="100%"></iframe> -->
+
+					<div class="cardfooter">
+						<!-- <h3>KEY INSIGHTS :</h3> -->
+						<ul>
+						</ul>
+						<a href="https://morth.nic.in/sites/default/files/RA_2021_Compressed.pdf" target="_blank">
+						</a>
+					</div>
+				</div>
+				<div data-aos="zoom-in-right" data-aos-anchor-placement="top-center" class="numberpopup">
+					<!-- 2 -->
+					
+					<!-- 3 -->
+					
+					<!-- 4 -->
+					
+					
+				</div>
+				
+				<div data-aos="fade-up" data-aos-duration="3000" data-aos-anchor-placement="top-center"
+					class="storypopup">
+					<div class="storypopup_heading">
+						<span class="font-larger">Street Light Statistics</span> <br>
+						
+						
+					</div>
+					<div>
+						<div style="display:flex;margin-top:2rem;justify-content: center;">
+							<span>
+								
+							</span> <br>
+						</div>
+						<div
+							style="display: flex;flex-wrap:no-wrap;text-align: center;justify-content: space-evenly;padding:0.2rem;">
+							<div style="margin:0.2rem;"> <span class="font-large">3.327 </span><br><span
+									class="font-small">Total Area of Electronic City (km^2) </span></div>
+							<div style="margin:0.2rem;"> <span class="font-large">534</span> <br><span
+									class="font-small">Total Number of Street Lights</span></div>
+							<div style="margin:0.2rem;"> <span class="font-large">21.235</span> <br><span
+									class="font-small">Average Distance Between Adjacent Street Lights (metres)</span></div>
+						</div>
+						<div
+							style="display: flex;flex-wrap:no-wrap;text-align: center;justify-content: space-evenly;padding:0.2rem;">
+							<div style="margin:0.2rem;"> <span class="font-large">482.48</span> <br><span
+									class="font-small">Average Energy Consumed Per Day</span></div>
+							
+
+						</div>
+					</div>
+
+
+					<div class="cardfooter">
+						<a href="https://catalogue.iudx.org.in/dataset/elcita.in-5c6cb972398bd01ad8c299f1e55da815e0c394f0-rs.iudx.org.in-bengaluru-elcita-streetlight-locations" target="_blank">
+							<p class="cardfooterlink">Source <i class="fa fa-external-link" aria-hidden="true"></i></p>
+						</a>
+					</div>
+				</div>
+
+
+				<div data-aos="zoom-in-right" data-aos-anchor-placement="top-center" class="numberpopup">
+					<!-- 5 -->
+					
+					<!-- 6 -->
+					
+				</div>
+				<div data-aos="fade-up" data-aos-duration="3000" data-aos-anchor-placement="top-center"
+					class="storypopup opacityfull">
+					<p style="margin: 0;padding: 0;margin-right: auto;" class="font-larger">Location of Street Lights in Electronic City</p>
+					<br>
+					<iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless"
+						src="street_light_map.html" height="525" width="100%" height="100%"></iframe> <br>
+					<div class="cardfooter">
+						<!-- <h3>KEY INSIGHTS :</h3> -->
+						<ul>
+							<li>Grey - 0 or no data</li>
+							<li>Yellow - 1-800</li>
+							<li>Orange - 801-1700</li>
+							<li>Red - Greater than 1700</li>
+						</ul>
+						<a href="https://catalogue.iudx.org.in/bengaluru/dataset/elcita.in-5c6cb972398bd01ad8c299f1e55da815e0c394f0-rs.iudx.org.in-bengaluru-elcita-streetlight"
+							target="_blank">
+							<p class="cardfooterlink">Source <i class="fa fa-external-link" aria-hidden="true"></i></p>
+						</a>
+					</div>
+				</div>
+
+
+				<div data-aos="zoom-in-right" data-aos-anchor-placement="top-center" class="numberpopup">
+					<!-- 7 -->
+					
+					<!-- 8 -->
+					
+					<!-- 9 -->
+					
+					<!-- 10 -->
+					
+					<!-- 11 -->
+					
+					<!-- 12 -->
+					
+					<!-- 13 -->
+					
+					<!-- 14 -->
+					
+						<!-- <h3>KEY INSIGHTS :</h3> -->
+						<!-- <ul>
+							<li>The city is uniformly covered with respect to ambulance accessibility
+							</li>
+						</ul> -->
+						<a href="https://catalogue.iudx.org.in/bengaluru/dataset/datakaveri.org-fb0924bef803e220e0d0bc8ceaf0a1f999442f32-rs.iudx.org.in-bengaluru-emergency-vehicles"
+							target="_blank">
+													</a>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+
+
+	<div class="footer">
+		<div>
+			<div> <img class="navlogofooter" src="assets/images/iudx_logo_bw.png"></div>
+			<br><br><br>
+			<div>&copy; 2023 All rights reserved</div>
+		</div>
+		<div>
+			<img class="footerhospitaltopview" src="/assets/images/street-light-svgrepo-com.svg">
+		</div>
+		<div>
+			<h3>India Urban Data Exchange</h3>
+			IUDX is a transformative initiative of the Ministry of Housing and Urban Affairs, Government of
+			India to
+			provide a data exchange platform to Indian cities. IUDX serves as a seamless interface for data
+			providers
+			and data users, including ULBs, to share, request, and access datasets related to cities, urban
+			governance,
+			and urban service delivery. The platform has been developed by the Smart Cities Mission and is
+			implemented
+			by the Indian Institute of Science (IISc), Bengaluru.
+			<br>
+			<div style="float: right;"></span>
+				<a href="https://iudx.org.in/" target="_blank"><i class="fa fa-solid fa-link fa-white"></i></a>
+				<a href="https://github.com/datakaveri" target="_blank"><i
+						class="fa fa-brands fa-github fa-white"></i></a>
+				<a href="https://twitter.com/IndiaIudx" target="_blank"><i
+						class="fa fa-brands fa-twitter fa-white"></i></a>
+				<a href="mailto:support@iudx.org.in" target="_blank"><i class="fa fa-envelope fa-white"></i></a>
+				<a href="https://www.linkedin.com/company/iudx/" target="_blank"><i
+						class=" fa fa-brands fa-linkedin fa-white"></i></a>
+				<a href="https://www.facebook.com/India-Urban-Data-Exchange-114855197042929" target="_blank"><i
+						class=" fa fa-brands fa-facebook fa-white"></i></a>
+				<a href="https://www.youtube.com/channel/UCK9oI1VtbKnEe7cJIt_eUFA?view_as=subscriber" target="_blank"><i
+						class=" fa fa-brands fa-youtube fa-white"></i></a>
+			</div>
+		</div>
+	</div>
+
+	<!-- Scipts load at end-->
+	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+	<script>
+		AOS.init();
+	</script>
+	<script src="assets/js/script.js"></script>
+
+	<!-- Magnific Popup core JS file -->
+	<script src="./assets/magnific-popup/jquery.magnific-popup.js"></script>
+	<!-- Magnific popup initalize -->
+	<script src="/assets/js/image-popout.js"></script>
+	<script src="./assets/chartsjs/chart1.js">
+	</script>
+	<script src="./assets/chartsjs/chart2.js">
+	</script>
+	<script src="./assets/chartsjs/chart3.js">
+	</script>
+	<script src="./assets/chartsjs/chart4.js">
+	</script>
+	<script src="./assets/chartsjs/chart5.js">
+	</script>
+	<script src="./assets/chartsjs/chart6.js">
+	</script>
+	<script src="./assets/chartsjs/chart7.js">
+	</script>
+</body>
+
 </html>

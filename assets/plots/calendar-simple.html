@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en" style="height: 100%">
+
+<head>
+  <meta charset="utf-8">
+</head>
+
+<body style="height: 100%; margin: 0">
+  <div id="container" style="height: 100%"></div>
+
+
+  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts@5.4.1/dist/echarts.min.js"></script>
+  <!-- Uncomment this line if you want to dataTool extension
+  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts@5.4.1/dist/extension/dataTool.min.js"></script>
+  -->
+  <!-- Uncomment this line if you want to use gl extension
+  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts-gl@2/dist/echarts-gl.min.js"></script>
+  -->
+  <!-- Uncomment this line if you want to echarts-stat extension
+  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts-stat@latest/dist/ecStat.min.js"></script>
+  -->
+  <!-- Uncomment this line if you want to use map
+  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts@4.9.0/map/js/china.js"></script>
+  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts@4.9.0/map/js/world.js"></script>
+  -->
+  <!-- Uncomment these two lines if you want to use bmap extension
+  <script type="text/javascript" src="https://api.map.baidu.com/api?v=3.0&ak=YOUR_API_KEY"></script>
+  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts@5.4.1/dist/extension/bmap.min.js"></script>
+  -->
+
+  <script type="text/javascript">
+    var dom = document.getElementById('container');
+    var myChart = echarts.init(dom, null, {
+      renderer: 'canvas',
+      useDirtyRect: false
+    });
+    var app = {};
+
+    var option;
+
+    function getVirtualData(year) {
+      let date = +echarts.time.parse(year + '-02-01');
+      const end = +echarts.time.parse(year + '-02-28');
+      const dayTime = 3600 * 24 * 1000;
+      const data = ["0","0","0","0","0","2941.8","3848.7","3483.4","3952","3984.2","3446.7","3319.2","21506.2","3436.4","4046.8","12362.2","3304.6","2774.3","2854.4","3389.7","20595.6","3892.5","3635.9","3173.8","3140.7","2837.3","3395","20462.9","0"];
+      let it = 0;
+      for (let time = date; time <= end; time += dayTime) {
+        let items = [];
+        let eventCount = Math.round(Math.random() * 10);
+        for (let i = 0; i < eventCount; i++) {
+          items.push(Math.round(Math.random() * (1000 - 1)));
+        }
+        data.push([
+          echarts.time.format(time, '{yyyy}-{MM}-{dd}', false),
+          Math.floor(data[it]),
+          it + 1
+        ]);
+        it++;
+      }
+
+      // console.log(data);
+      return data;
+    }
+    option = {
+      tooltip: {
+        position: 'top',
+        formatter: function (params) {
+          return 'Distance (Kms) : ' + params.value[1].toFixed(2);
+        }
+      },
+      visualMap: {
+        min: 2000,
+        max: 4000,
+        calculable: true,
+        orient: 'horizontal',
+        bottom: '-10',
+        left: '10%'
+      },
+      calendar: [{
+        orient: 'vertical',
+        yearLabel: { show: false },
+        dayLabel: {
+          firstDay: 1,
+          nameMap: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
+        },
+        monthLabel: {
+          nameMap: 'cn',
+          margin: 20
+        },
+        cellSize: [40, 40],
+        range: '2023-02'
+      }],
+      series: [{
+        type: 'heatmap',
+        coordinateSystem: 'calendar',
+        data: getVirtualData('2023'),
+        label: {
+          show: true
+        }
+      }]
+    };
+
+    if (option && typeof option === 'object') {
+      myChart.setOption(option);
+    }
+
+    window.addEventListener('resize', myChart.resize);
+  </script>
+</body>
+
+</html>

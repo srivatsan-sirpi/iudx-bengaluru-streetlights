@@ -1,0 +1,910 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_59120cd8d6a1c1fba8807a4e701e5ff3 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+                
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_59120cd8d6a1c1fba8807a4e701e5ff3" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_59120cd8d6a1c1fba8807a4e701e5ff3 = L.map(
+                "map_59120cd8d6a1c1fba8807a4e701e5ff3",
+                {
+                    center: [22.352241302254185, 73.20588385347531],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 12,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_e3fc0fbcd06f32cdb123354001dd90a5 = L.tileLayer(
+                "https://stamen-tiles-{s}.a.ssl.fastly.net/terrain/{z}/{x}/{y}.jpg",
+                {"attribution": "Map tiles by \u003ca target=\"_blank\" href=\"http://stamen.com\"\u003eStamen Design\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://creativecommons.org/licenses/by/3.0\"\u003eCC BY 3.0\u003c/a\u003e. Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://creativecommons.org/licenses/by-sa/3.0\"\u003eCC BY SA\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_59120cd8d6a1c1fba8807a4e701e5ff3);
+        
+    
+            var marker_661b071f5cf7f9ea730696c6f1f6a2ad = L.marker(
+                [22.352241302254185, 73.20588385347531],
+                {}
+            ).addTo(map_59120cd8d6a1c1fba8807a4e701e5ff3);
+        
+    
+        var popup_86e8075a6fa19d0014dcbdd09b453a72 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_08e7239ea5fd94bc5f36dc561eb33964 = $(`<div id="html_08e7239ea5fd94bc5f36dc561eb33964" style="width: 100.0%; height: 100.0%;">The Cure Urological Hospital,  Sama-Savli Road, Vemali, Vadodara, Gujarat</div>`)[0];
+                popup_86e8075a6fa19d0014dcbdd09b453a72.setContent(html_08e7239ea5fd94bc5f36dc561eb33964);
+            
+        
+
+        marker_661b071f5cf7f9ea730696c6f1f6a2ad.bindPopup(popup_86e8075a6fa19d0014dcbdd09b453a72)
+        ;
+
+        
+    
+    
+            var marker_242e2d1abb74b1a5549495d4032c9db9 = L.marker(
+                [22.289393419361165, 73.22751411314697],
+                {}
+            ).addTo(map_59120cd8d6a1c1fba8807a4e701e5ff3);
+        
+    
+        var popup_7674698403120be25ea10b90810c0c73 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_4d96b594f822c9ef6e1daa4ec44fc1ab = $(`<div id="html_4d96b594f822c9ef6e1daa4ec44fc1ab" style="width: 100.0%; height: 100.0%;">Jhanvi Nursing Home, 2nd floor, Trupt complex, D Mart Rd, Vadodara, Gujarat 390025</div>`)[0];
+                popup_7674698403120be25ea10b90810c0c73.setContent(html_4d96b594f822c9ef6e1daa4ec44fc1ab);
+            
+        
+
+        marker_242e2d1abb74b1a5549495d4032c9db9.bindPopup(popup_7674698403120be25ea10b90810c0c73)
+        ;
+
+        
+    
+    
+            var marker_1ab79661b16557601acbea5870fa822c = L.marker(
+                [22.312978900498106, 73.15888407271413],
+                {}
+            ).addTo(map_59120cd8d6a1c1fba8807a4e701e5ff3);
+        
+    
+        var popup_87c24077cb82240dbecc9c60f7b3c041 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_d2ccdf71a16eb0d6b1ad973e2a702228 = $(`<div id="html_d2ccdf71a16eb0d6b1ad973e2a702228" style="width: 100.0%; height: 100.0%;">Sterling Hospital Vadodara, Circle West, Race Course Road Opposite Inox Cinema, Hari Nagar, Vadodara, Gujarat 390007</div>`)[0];
+                popup_87c24077cb82240dbecc9c60f7b3c041.setContent(html_d2ccdf71a16eb0d6b1ad973e2a702228);
+            
+        
+
+        marker_1ab79661b16557601acbea5870fa822c.bindPopup(popup_87c24077cb82240dbecc9c60f7b3c041)
+        ;
+
+        
+    
+    
+            var marker_73ff58c5b07cdc4f57cd1dea76a64282 = L.marker(
+                [22.317337319879687, 73.16693259063805],
+                {}
+            ).addTo(map_59120cd8d6a1c1fba8807a4e701e5ff3);
+        
+    
+        var popup_06c54729192e5485013314fe9a717926 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_35e35bc7a689f9acfb7763d29b5eb454 = $(`<div id="html_35e35bc7a689f9acfb7763d29b5eb454" style="width: 100.0%; height: 100.0%;">Tricolour Hospitals - Multispeciality Hospital in Vadodara, Dr. Vikram Sarabhai Road, Genda Cir, Vadiwadi, Vadodara, Gujarat 390007</div>`)[0];
+                popup_06c54729192e5485013314fe9a717926.setContent(html_35e35bc7a689f9acfb7763d29b5eb454);
+            
+        
+
+        marker_73ff58c5b07cdc4f57cd1dea76a64282.bindPopup(popup_06c54729192e5485013314fe9a717926)
+        ;
+
+        
+    
+    
+            var marker_cec4137ab03f004b3a2d2aead04c9f83 = L.marker(
+                [22.3121298985164, 73.15248711225298],
+                {}
+            ).addTo(map_59120cd8d6a1c1fba8807a4e701e5ff3);
+        
+    
+        var popup_6b3c82f963160d56dc4f18f0bcb07ec4 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_a9b91e17d4437a61ea3780743f6a318e = $(`<div id="html_a9b91e17d4437a61ea3780743f6a318e" style="width: 100.0%; height: 100.0%;">Unity Multispeciality Hospital, Unity Hospital, Rajesh Tower Road, Opp. Suner Complex, Near, Hari Nagar Cross Rd, Gotri, Vadodara, Gujarat 390021</div>`)[0];
+                popup_6b3c82f963160d56dc4f18f0bcb07ec4.setContent(html_a9b91e17d4437a61ea3780743f6a318e);
+            
+        
+
+        marker_cec4137ab03f004b3a2d2aead04c9f83.bindPopup(popup_6b3c82f963160d56dc4f18f0bcb07ec4)
+        ;
+
+        
+    
+    
+            var marker_fe1419e26915d6b32e8b3e1f6e923f6d = L.marker(
+                [22.307354139773796, 73.17576985274242],
+                {}
+            ).addTo(map_59120cd8d6a1c1fba8807a4e701e5ff3);
+        
+    
+        var popup_ebaa9c23729836e3f2a5d1d9627ad496 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_b0b9430b70942125bdca0f6a311d9df8 = $(`<div id="html_b0b9430b70942125bdca0f6a311d9df8" style="width: 100.0%; height: 100.0%;">Gujarat Superspeciality Hospital Vadodara | Robotic Surgery Center | Hospital in Vadodara | Urologist | Kidney Hospital, New India Mill Compound Nr Jetalpur Bridge, Jetalpur Rd, Vadodara, Gujarat 390020</div>`)[0];
+                popup_ebaa9c23729836e3f2a5d1d9627ad496.setContent(html_b0b9430b70942125bdca0f6a311d9df8);
+            
+        
+
+        marker_fe1419e26915d6b32e8b3e1f6e923f6d.bindPopup(popup_ebaa9c23729836e3f2a5d1d9627ad496)
+        ;
+
+        
+    
+    
+            var marker_f29e5ac6aecbe1b4ee94a954cb4e9faf = L.marker(
+                [22.308894480316507, 73.14879710550346],
+                {}
+            ).addTo(map_59120cd8d6a1c1fba8807a4e701e5ff3);
+        
+    
+        var popup_c5225d11c297d5ab8f66c550465cf2b0 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_be5ed81709e120693d0667e5da50d390 = $(`<div id="html_be5ed81709e120693d0667e5da50d390" style="width: 100.0%; height: 100.0%;">Aman Hospital & Research Center, 15 Shaswat, Gotri Rd, opposite ESI Hospital, Vadodara, Gujarat 390021</div>`)[0];
+                popup_c5225d11c297d5ab8f66c550465cf2b0.setContent(html_be5ed81709e120693d0667e5da50d390);
+            
+        
+
+        marker_f29e5ac6aecbe1b4ee94a954cb4e9faf.bindPopup(popup_c5225d11c297d5ab8f66c550465cf2b0)
+        ;
+
+        
+    
+    
+            var marker_d2f0d5a650142f6bbea46d905bb4a29e = L.marker(
+                [22.2951566982482, 73.14961174169825],
+                {}
+            ).addTo(map_59120cd8d6a1c1fba8807a4e701e5ff3);
+        
+    
+        var popup_c812e9ca547f33450774e9f03c2b23a6 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_3d4605b983172423404092707f149cb3 = $(`<div id="html_3d4605b983172423404092707f149cb3" style="width: 100.0%; height: 100.0%;">Samanvay Hospital, Samanvay Hospital, Vasna Rd, nr. St. Kabir School, opp. Raneshwar Temple, Krishnadham Society, Saiyed Vasna, Vadodara, Gujarat 390015</div>`)[0];
+                popup_c812e9ca547f33450774e9f03c2b23a6.setContent(html_3d4605b983172423404092707f149cb3);
+            
+        
+
+        marker_d2f0d5a650142f6bbea46d905bb4a29e.bindPopup(popup_c812e9ca547f33450774e9f03c2b23a6)
+        ;
+
+        
+    
+    
+            var marker_3021b010650c4e0b5740009a38382c78 = L.marker(
+                [22.30626466027576, 73.17576878280266],
+                {}
+            ).addTo(map_59120cd8d6a1c1fba8807a4e701e5ff3);
+        
+    
+        var popup_9f2fde9026dde3bc97046f549650c33e = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_01f89a5eed5d8c4d72a6462b054f491c = $(`<div id="html_01f89a5eed5d8c4d72a6462b054f491c" style="width: 100.0%; height: 100.0%;">Aadicura Superspeciality Hospital Vadodara | Hospital in Vadodara, Jetalpur Rd, behind Gujarat Kidney Hospital, Anand Nagar, Haripura, Vadodara, Gujarat 390020</div>`)[0];
+                popup_9f2fde9026dde3bc97046f549650c33e.setContent(html_01f89a5eed5d8c4d72a6462b054f491c);
+            
+        
+
+        marker_3021b010650c4e0b5740009a38382c78.bindPopup(popup_9f2fde9026dde3bc97046f549650c33e)
+        ;
+
+        
+    
+    
+            var marker_2a14aa9ce5a765078ca397e5fee03184 = L.marker(
+                [22.294829477852044, 73.13800324169826],
+                {}
+            ).addTo(map_59120cd8d6a1c1fba8807a4e701e5ff3);
+        
+    
+        var popup_3a7d191b575ddd6290680ba56e0448ca = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_0bf0a7145ed9246e01cb4024fa6bf94f = $(`<div id="html_0bf0a7145ed9246e01cb4024fa6bf94f" style="width: 100.0%; height: 100.0%;">Nand Hospital, Near Panchmukhi Hanuman Temple, Vasna - Bhayli Main Rd, next to Shantidham Society, Vadodara, Gujarat 390015</div>`)[0];
+                popup_3a7d191b575ddd6290680ba56e0448ca.setContent(html_0bf0a7145ed9246e01cb4024fa6bf94f);
+            
+        
+
+        marker_2a14aa9ce5a765078ca397e5fee03184.bindPopup(popup_3a7d191b575ddd6290680ba56e0448ca)
+        ;
+
+        
+    
+    
+            var marker_18620336e45bec2c426870773a7cadd7 = L.marker(
+                [22.32593739701275, 73.16328027605566],
+                {}
+            ).addTo(map_59120cd8d6a1c1fba8807a4e701e5ff3);
+        
+    
+        var popup_3a13783b44f2109904c22e005840271f = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_96bd101b18aad5aaae83d5932831b405 = $(`<div id="html_96bd101b18aad5aaae83d5932831b405" style="width: 100.0%; height: 100.0%;">Bhailal Amin General Hospital, Bhailal Amin Marg, Road, Gorwa, Vadodara, Gujarat 390003</div>`)[0];
+                popup_3a13783b44f2109904c22e005840271f.setContent(html_96bd101b18aad5aaae83d5932831b405);
+            
+        
+
+        marker_18620336e45bec2c426870773a7cadd7.bindPopup(popup_3a13783b44f2109904c22e005840271f)
+        ;
+
+        
+    
+    
+            var marker_a1571c1489becf2580ee47976bc155dc = L.marker(
+                [22.28021437905214, 73.14527647114605],
+                {}
+            ).addTo(map_59120cd8d6a1c1fba8807a4e701e5ff3);
+        
+    
+        var popup_5770803635628f2f6dba589c3d472049 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_b76a1ff7e9eb1485dc3afa717b21eae5 = $(`<div id="html_b76a1ff7e9eb1485dc3afa717b21eae5" style="width: 100.0%; height: 100.0%;">Galaxy multi-speciality hospital, 1, Shreeji darshan bunglows, Sun Pharma Rd, Vadodara, Gujarat 390012</div>`)[0];
+                popup_5770803635628f2f6dba589c3d472049.setContent(html_b76a1ff7e9eb1485dc3afa717b21eae5);
+            
+        
+
+        marker_a1571c1489becf2580ee47976bc155dc.bindPopup(popup_5770803635628f2f6dba589c3d472049)
+        ;
+
+        
+    
+    
+            var marker_e5e5a3381230239d7e7994948f45794c = L.marker(
+                [22.309152237757804, 73.16613361225046],
+                {}
+            ).addTo(map_59120cd8d6a1c1fba8807a4e701e5ff3);
+        
+    
+        var popup_651a566245854b9c61f1a1ccdab1e280 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_7da79c4ba13a04111ae78f7b606d1fa3 = $(`<div id="html_7da79c4ba13a04111ae78f7b606d1fa3" style="width: 100.0%; height: 100.0%;">VITAS Hospital, Vitas Hospital, Pragati Apartment, Dutt Vihar Society, Opp Income Tax Office Beside Kalyan Jewelers, Chakli Circle, Jetalpur Rd, Vadodara, Gujarat 390005</div>`)[0];
+                popup_651a566245854b9c61f1a1ccdab1e280.setContent(html_7da79c4ba13a04111ae78f7b606d1fa3);
+            
+        
+
+        marker_e5e5a3381230239d7e7994948f45794c.bindPopup(popup_651a566245854b9c61f1a1ccdab1e280)
+        ;
+
+        
+    
+    
+            var marker_be78b93e70a4551393da8192c25a40a3 = L.marker(
+                [22.29902832237712, 73.12873331163797],
+                {}
+            ).addTo(map_59120cd8d6a1c1fba8807a4e701e5ff3);
+        
+    
+        var popup_f0647f071a415eceef0986e63275c5c6 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_564ac404561667caa9393871b0565f76 = $(`<div id="html_564ac404561667caa9393871b0565f76" style="width: 100.0%; height: 100.0%;">SARV Multi Speciality Hospital, Axshar Pavillion, 74XH+JH3 Saiyed Vasna Road, Vasna - Bhayli Main Rd, nr. Priya Cinema, TP 4, Vadodara, Gujarat 390021</div>`)[0];
+                popup_f0647f071a415eceef0986e63275c5c6.setContent(html_564ac404561667caa9393871b0565f76);
+            
+        
+
+        marker_be78b93e70a4551393da8192c25a40a3.bindPopup(popup_f0647f071a415eceef0986e63275c5c6)
+        ;
+
+        
+    
+    
+            var marker_57f91b414a80ae3ec6debc8b01373d5e = L.marker(
+                [22.288863641949643, 73.16529575274241],
+                {}
+            ).addTo(map_59120cd8d6a1c1fba8807a4e701e5ff3);
+        
+    
+        var popup_65385fd95bea4c75256f7c8fd4e2a904 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_6ba431e2c7501c9834824d3c0eca21ed = $(`<div id="html_6ba431e2c7501c9834824d3c0eca21ed" style="width: 100.0%; height: 100.0%;">Venus Super Speciality Hospital, Off OP Road Opp. Akota Ward Office No 6, Vadodara, Gujarat 390020</div>`)[0];
+                popup_65385fd95bea4c75256f7c8fd4e2a904.setContent(html_6ba431e2c7501c9834824d3c0eca21ed);
+            
+        
+
+        marker_57f91b414a80ae3ec6debc8b01373d5e.bindPopup(popup_65385fd95bea4c75256f7c8fd4e2a904)
+        ;
+
+        
+    
+    
+            var marker_f5fd119639aca4370ff470324451aaaa = L.marker(
+                [22.29766942050176, 73.17188567053357],
+                {}
+            ).addTo(map_59120cd8d6a1c1fba8807a4e701e5ff3);
+        
+    
+        var popup_3c1daa4607802dcdcc5c07a98241bed8 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_9bbca18aad842a77209cde01f676e2e7 = $(`<div id="html_9bbca18aad842a77209cde01f676e2e7" style="width: 100.0%; height: 100.0%;">Sanjivani Hospital, Ujjwal Complex Besides Akota Stadium, Productivity Road, opposite Shrenik Park, Akota, Vadodara, Gujarat 390020</div>`)[0];
+                popup_3c1daa4607802dcdcc5c07a98241bed8.setContent(html_9bbca18aad842a77209cde01f676e2e7);
+            
+        
+
+        marker_f5fd119639aca4370ff470324451aaaa.bindPopup(popup_3c1daa4607802dcdcc5c07a98241bed8)
+        ;
+
+        
+    
+    
+            var marker_39e11f711b215fa52f3ee71c7c872d91 = L.marker(
+                [22.28145569943405, 73.16386253556372],
+                {}
+            ).addTo(map_59120cd8d6a1c1fba8807a4e701e5ff3);
+        
+    
+        var popup_20d9bd9a7deca65149ad6340260cbc1b = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_898642593a70ac583f3161db872946bb = $(`<div id="html_898642593a70ac583f3161db872946bb" style="width: 100.0%; height: 100.0%;">Zydus Hospitals, Old Padra Rd, nr. Akshar Chowk, Hira Nagar, Tandalja, Vadodara, Gujarat 390020</div>`)[0];
+                popup_20d9bd9a7deca65149ad6340260cbc1b.setContent(html_898642593a70ac583f3161db872946bb);
+            
+        
+
+        marker_39e11f711b215fa52f3ee71c7c872d91.bindPopup(popup_20d9bd9a7deca65149ad6340260cbc1b)
+        ;
+
+        
+    
+    
+            var marker_50968e388371b0b577ff36642d822886 = L.marker(
+                [22.30022807113504, 73.21208044153849],
+                {}
+            ).addTo(map_59120cd8d6a1c1fba8807a4e701e5ff3);
+        
+    
+        var popup_722073ae3511d36260e0284cf5d2dfa0 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_49c66e1058f01324fd9671ccb53dc41b = $(`<div id="html_49c66e1058f01324fd9671ccb53dc41b" style="width: 100.0%; height: 100.0%;">Jamnabai General Hospital, 8626+2RC, Panigate Road, Mandvi Cir, Vadodara, Gujarat 390017</div>`)[0];
+                popup_722073ae3511d36260e0284cf5d2dfa0.setContent(html_49c66e1058f01324fd9671ccb53dc41b);
+            
+        
+
+        marker_50968e388371b0b577ff36642d822886.bindPopup(popup_722073ae3511d36260e0284cf5d2dfa0)
+        ;
+
+        
+    
+    
+            var marker_6d72f2c3468b0fd86002ca8fa4b15104 = L.marker(
+                [22.295983578374067, 73.24227652120155],
+                {}
+            ).addTo(map_59120cd8d6a1c1fba8807a4e701e5ff3);
+        
+    
+        var popup_084577b7150339ddc085bbc78a8d3ce8 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_cbf6d377721d2c93acd87d7162199b85 = $(`<div id="html_cbf6d377721d2c93acd87d7162199b85" style="width: 100.0%; height: 100.0%;">Savita Hospital, 76VR+6V8, Near Prakash Motor Garrage, Parivar Char Rasta, Dabhoi - Waghodia Ring Rd, Sarthi Nagar 2, Kendranagar, Vadodara, Gujarat 390019</div>`)[0];
+                popup_084577b7150339ddc085bbc78a8d3ce8.setContent(html_cbf6d377721d2c93acd87d7162199b85);
+            
+        
+
+        marker_6d72f2c3468b0fd86002ca8fa4b15104.bindPopup(popup_084577b7150339ddc085bbc78a8d3ce8)
+        ;
+
+        
+    
+    
+            var marker_9f70770f2afc6aab6c6646b190c8816d = L.marker(
+                [22.28152954333581, 73.20313772991922],
+                {}
+            ).addTo(map_59120cd8d6a1c1fba8807a4e701e5ff3);
+        
+    
+        var popup_41ad2764f885b04884c4444623d5dafb = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_ea5366488a009c15e413e77401e5c1ed = $(`<div id="html_ea5366488a009c15e413e77401e5c1ed" style="width: 100.0%; height: 100.0%;">Spandan Multispeciality Hospital, Municipal Corporation, Sindhwai Mata Road Beside Ward Office No: 4, Manjalpur, Vadodara, Gujarat 390011</div>`)[0];
+                popup_41ad2764f885b04884c4444623d5dafb.setContent(html_ea5366488a009c15e413e77401e5c1ed);
+            
+        
+
+        marker_9f70770f2afc6aab6c6646b190c8816d.bindPopup(popup_41ad2764f885b04884c4444623d5dafb)
+        ;
+
+        
+    
+    
+            var marker_06125652d337a2eee5e79a904cda80ce = L.marker(
+                [22.33965426601184, 73.20914587942066],
+                {}
+            ).addTo(map_59120cd8d6a1c1fba8807a4e701e5ff3);
+        
+    
+        var popup_36938b979d41125a2ce65815df67559a = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_f5981b7ae25f49423874745f528ab9fa = $(`<div id="html_f5981b7ae25f49423874745f528ab9fa" style="width: 100.0%; height: 100.0%;">Metro Hospital & Research Institute, Sama - Harni Rd, beside Kendriya Vidhyalaya, Shivam Park Society, BSNL Colony, Karelibagh, Vadodara, Gujarat 390022</div>`)[0];
+                popup_36938b979d41125a2ce65815df67559a.setContent(html_f5981b7ae25f49423874745f528ab9fa);
+            
+        
+
+        marker_06125652d337a2eee5e79a904cda80ce.bindPopup(popup_36938b979d41125a2ce65815df67559a)
+        ;
+
+        
+    
+    
+            var marker_ecb3580409e2254456682a04bb1294ab = L.marker(
+                [22.34489383004465, 73.22013220679817],
+                {}
+            ).addTo(map_59120cd8d6a1c1fba8807a4e701e5ff3);
+        
+    
+        var popup_dc89f6914dff0c9a66e4cbd15d58e37a = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_414c9b42e8bff1e3b9baab9f2b4bef1d = $(`<div id="html_414c9b42e8bff1e3b9baab9f2b4bef1d" style="width: 100.0%; height: 100.0%;">Janvi Multispeciality Hospital, 302, Silver Square Complex, Airport Rd, near Gada Circle, Vadodara, Gujarat 390022</div>`)[0];
+                popup_dc89f6914dff0c9a66e4cbd15d58e37a.setContent(html_414c9b42e8bff1e3b9baab9f2b4bef1d);
+            
+        
+
+        marker_ecb3580409e2254456682a04bb1294ab.bindPopup(popup_dc89f6914dff0c9a66e4cbd15d58e37a)
+        ;
+
+        
+    
+    
+            var marker_2d79cd947982fabc68f0223d4d2af90b = L.marker(
+                [22.315041558658734, 73.22356543410363],
+                {}
+            ).addTo(map_59120cd8d6a1c1fba8807a4e701e5ff3);
+        
+    
+        var popup_5ab557d7e3d323457643b5d242382a08 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_53012a5b03aff910a4778c0d140a9aba = $(`<div id="html_53012a5b03aff910a4778c0d140a9aba" style="width: 100.0%; height: 100.0%;">Premdas Jalaram Hospital, Ring Road, behind RTO Road, near Harmi, Premdas Nagar, Warasiya, Vadodara, Gujarat 390006</div>`)[0];
+                popup_5ab557d7e3d323457643b5d242382a08.setContent(html_53012a5b03aff910a4778c0d140a9aba);
+            
+        
+
+        marker_2d79cd947982fabc68f0223d4d2af90b.bindPopup(popup_5ab557d7e3d323457643b5d242382a08)
+        ;
+
+        
+    
+    
+            var marker_48ddced23c6064e1bb2e31dd76345833 = L.marker(
+                [22.27326942380965, 73.20021948842644],
+                {}
+            ).addTo(map_59120cd8d6a1c1fba8807a4e701e5ff3);
+        
+    
+        var popup_4c682bb85f124603997e1a7f51234614 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_85e0801f62836ff6519670cba43b99d7 = $(`<div id="html_85e0801f62836ff6519670cba43b99d7" style="width: 100.0%; height: 100.0%;">Anugrah Hospital, Tulshi Dham Rd, Krupal Society, Manjalpur, Vadodara, Gujarat 390009</div>`)[0];
+                popup_4c682bb85f124603997e1a7f51234614.setContent(html_85e0801f62836ff6519670cba43b99d7);
+            
+        
+
+        marker_48ddced23c6064e1bb2e31dd76345833.bindPopup(popup_4c682bb85f124603997e1a7f51234614)
+        ;
+
+        
+    
+    
+            var marker_30744f2e152072328fac33948a4341b5 = L.marker(
+                [22.25261699128161, 73.19678626112099],
+                {}
+            ).addTo(map_59120cd8d6a1c1fba8807a4e701e5ff3);
+        
+    
+        var popup_b9a335360b575935a77262f11fc7d069 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_ca25ebc77bb664fbe750cf0bb09fe4af = $(`<div id="html_ca25ebc77bb664fbe750cf0bb09fe4af" style="width: 100.0%; height: 100.0%;">Padma Hospital, Samrundhi Residency Cum Plaza, 3rd Ln, Beside Makarpura Bus Depot, Bhakti Nagar, Makarpura, Vadodara, Gujarat 390010</div>`)[0];
+                popup_b9a335360b575935a77262f11fc7d069.setContent(html_ca25ebc77bb664fbe750cf0bb09fe4af);
+            
+        
+
+        marker_30744f2e152072328fac33948a4341b5.bindPopup(popup_b9a335360b575935a77262f11fc7d069)
+        ;
+
+        
+    
+    
+            var marker_a54cca34540a9acbd48d01822d702551 = L.marker(
+                [22.23752290241476, 73.18803153149204],
+                {}
+            ).addTo(map_59120cd8d6a1c1fba8807a4e701e5ff3);
+        
+    
+        var popup_60b5c461ba055cfa5fe11f6b3b198323 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_42410fa86947892a017f1ce3279bd30e = $(`<div id="html_42410fa86947892a017f1ce3279bd30e" style="width: 100.0%; height: 100.0%;">Care Multispeciality Hospital, Maneja, Hotel sun city inn, Aarya's Corner Point Commercial Hub, Makarpura Rd, opp. Voltamp Company, Vadodara, Gujarat 390013</div>`)[0];
+                popup_60b5c461ba055cfa5fe11f6b3b198323.setContent(html_42410fa86947892a017f1ce3279bd30e);
+            
+        
+
+        marker_a54cca34540a9acbd48d01822d702551.bindPopup(popup_60b5c461ba055cfa5fe11f6b3b198323)
+        ;
+
+        
+    
+    
+            var marker_d574e79f24e26459c35372ce70ce6979 = L.marker(
+                [22.31200436727119, 73.22390875683418],
+                {}
+            ).addTo(map_59120cd8d6a1c1fba8807a4e701e5ff3);
+        
+    
+        var popup_92177576b92288a3db52d27ccc82e109 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_3e8c35b5b946f6fa8af11d30cb1c2713 = $(`<div id="html_3e8c35b5b946f6fa8af11d30cb1c2713" style="width: 100.0%; height: 100.0%;">Kalavati Hospital, KALAVATI HOSPITAL, Harni - Warasiya Ring Road, Vadodara, Gujarat 390006</div>`)[0];
+                popup_92177576b92288a3db52d27ccc82e109.setContent(html_3e8c35b5b946f6fa8af11d30cb1c2713);
+            
+        
+
+        marker_d574e79f24e26459c35372ce70ce6979.bindPopup(popup_92177576b92288a3db52d27ccc82e109)
+        ;
+
+        
+    
+    
+            var marker_0312ca97a3edcf7b21a8982bba40af72 = L.marker(
+                [22.31108128620847, 73.22441301209467],
+                {}
+            ).addTo(map_59120cd8d6a1c1fba8807a4e701e5ff3);
+        
+    
+        var popup_e7791ae5936ca89cf328e097d41ea49b = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_1a8218e80938fdac4ff45f0b7ac19c1f = $(`<div id="html_1a8218e80938fdac4ff45f0b7ac19c1f" style="width: 100.0%; height: 100.0%;">Neeta Maternity & Gynec Hospital, No. C, 3, Harni - Warasiya Ring Rd, Dayal Nagar, Pramukhswami Nagar, Ganesh Nagar, Warasiya, Vadodara, Gujarat 390006</div>`)[0];
+                popup_e7791ae5936ca89cf328e097d41ea49b.setContent(html_1a8218e80938fdac4ff45f0b7ac19c1f);
+            
+        
+
+        marker_0312ca97a3edcf7b21a8982bba40af72.bindPopup(popup_e7791ae5936ca89cf328e097d41ea49b)
+        ;
+
+        
+    
+    
+            var marker_632af19c8622a2b241d1f9a8e65f6736 = L.marker(
+                [22.312649527787038, 73.2232435691613],
+                {}
+            ).addTo(map_59120cd8d6a1c1fba8807a4e701e5ff3);
+        
+    
+        var popup_9ca163893a4711b05e04b03429bd1c42 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_d62bf36be16d17a31f8bf7872f689a0a = $(`<div id="html_d62bf36be16d17a31f8bf7872f689a0a" style="width: 100.0%; height: 100.0%;">Secure ICU & Speciality Hospital, Govindam complex, Opp., Dajidarshan, Old RTO Lane, Harni - Warasiya Ring Rd, Warasia, Vadodara, Gujarat 390022</div>`)[0];
+                popup_9ca163893a4711b05e04b03429bd1c42.setContent(html_d62bf36be16d17a31f8bf7872f689a0a);
+            
+        
+
+        marker_632af19c8622a2b241d1f9a8e65f6736.bindPopup(popup_9ca163893a4711b05e04b03429bd1c42)
+        ;
+
+        
+    
+    
+            var marker_40fc11d6da0e71c010d13b6715b7b532 = L.marker(
+                [22.32171744025625, 73.23236196397288],
+                {}
+            ).addTo(map_59120cd8d6a1c1fba8807a4e701e5ff3);
+        
+    
+        var popup_673991b94a57e40ce725be09eb8a12c8 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_167a8de35c2832c8a76cd08e76bb9bb1 = $(`<div id="html_167a8de35c2832c8a76cd08e76bb9bb1" style="width: 100.0%; height: 100.0%;">Aayushya Multi Speciality Hospital - Physician Surgeon Orthopedic Gynecologist Obstetrician PathLab ICU X Ray Trauma Care, opp. Darshnam Oasis, near My Shanen School, Mukhi Nagar, Ayodhya Nagar, 3, Vadodara, Gujarat 390019</div>`)[0];
+                popup_673991b94a57e40ce725be09eb8a12c8.setContent(html_167a8de35c2832c8a76cd08e76bb9bb1);
+            
+        
+
+        marker_40fc11d6da0e71c010d13b6715b7b532.bindPopup(popup_673991b94a57e40ce725be09eb8a12c8)
+        ;
+
+        
+    
+    
+            var marker_2a2ddd90b3164e0bb3d9739f9786a2e0 = L.marker(
+                [22.30415798336833, 73.19290666961341],
+                {}
+            ).addTo(map_59120cd8d6a1c1fba8807a4e701e5ff3);
+        
+    
+        var popup_631e56b9e421b6740f3eecc23a5b410d = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_3a88711e47a1d8c37b4669ff6ce41ff8 = $(`<div id="html_3a88711e47a1d8c37b4669ff6ce41ff8" style="width: 100.0%; height: 100.0%;">Sumandeep Hospital, Kothi Rd, opp. Govt. Press, Anandpura, Vadodara, Gujarat 390001</div>`)[0];
+                popup_631e56b9e421b6740f3eecc23a5b410d.setContent(html_3a88711e47a1d8c37b4669ff6ce41ff8);
+            
+        
+
+        marker_2a2ddd90b3164e0bb3d9739f9786a2e0.bindPopup(popup_631e56b9e421b6740f3eecc23a5b410d)
+        ;
+
+        
+    
+    
+            var marker_26f82a95d85e923fdaed34a346948230 = L.marker(
+                [22.293437354074044, 73.22998552451246],
+                {}
+            ).addTo(map_59120cd8d6a1c1fba8807a4e701e5ff3);
+        
+    
+        var popup_c290be4c7c21376154e5e64e878f9841 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_484016a0580fa29511d4876895ece602 = $(`<div id="html_484016a0580fa29511d4876895ece602" style="width: 100.0%; height: 100.0%;">Mahavir Multispeciality Hospital, Kala Darshan Society, Waghodia Road, Near Radhe Govind Apartment, Urmi Cross Rd, Vadodara, Gujarat 390025</div>`)[0];
+                popup_c290be4c7c21376154e5e64e878f9841.setContent(html_484016a0580fa29511d4876895ece602);
+            
+        
+
+        marker_26f82a95d85e923fdaed34a346948230.bindPopup(popup_c290be4c7c21376154e5e64e878f9841)
+        ;
+
+        
+    
+    
+            var marker_d2c1f668a2a0f9b6e2b28881627ea826 = L.marker(
+                [22.28743202873172, 73.23719943390189],
+                {}
+            ).addTo(map_59120cd8d6a1c1fba8807a4e701e5ff3);
+        
+    
+        var popup_1717866ead3ee7fa88ce6f4783847eec = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_cfd16cc34d28ba44c3b1bfbfffc3278b = $(`<div id="html_cfd16cc34d28ba44c3b1bfbfffc3278b" style="width: 100.0%; height: 100.0%;">Krishna Hospital, 1st Floor, Nilamber Complex, Narayan School Road, Ward No:3, Near Swaminarayan Gurukul Char Rasta, Kendranagar, Vadodara, Gujarat 390025</div>`)[0];
+                popup_1717866ead3ee7fa88ce6f4783847eec.setContent(html_cfd16cc34d28ba44c3b1bfbfffc3278b);
+            
+        
+
+        marker_d2c1f668a2a0f9b6e2b28881627ea826.bindPopup(popup_1717866ead3ee7fa88ce6f4783847eec)
+        ;
+
+        
+    
+    
+            var marker_554ca6d1cc4de6c722cd1037d6f7ef43 = L.marker(
+                [22.27701105410133, 73.20010595144308],
+                {}
+            ).addTo(map_59120cd8d6a1c1fba8807a4e701e5ff3);
+        
+    
+        var popup_ba78ed318fa9c907c4f1025d33c0f29b = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_1b48ff35da149ecebec082815161dcd3 = $(`<div id="html_1b48ff35da149ecebec082815161dcd3" style="width: 100.0%; height: 100.0%;">Sunshine Global Hospital, Manjalpur, NR Shreyas Vidhyalay, near ICICI Bank Manjalpur, Vadodara-Branch & ATM, Manjalpur, Vadodara, Gujarat 390011</div>`)[0];
+                popup_ba78ed318fa9c907c4f1025d33c0f29b.setContent(html_1b48ff35da149ecebec082815161dcd3);
+            
+        
+
+        marker_554ca6d1cc4de6c722cd1037d6f7ef43.bindPopup(popup_ba78ed318fa9c907c4f1025d33c0f29b)
+        ;
+
+        
+    
+    
+            var marker_97c265d642655ea614e037be2eea0595 = L.marker(
+                [22.28633788990651, 73.20533705916905],
+                {}
+            ).addTo(map_59120cd8d6a1c1fba8807a4e701e5ff3);
+        
+    
+        var popup_2bd01209be889bf5fdece07b4c0b9d66 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_2acabec0201a95f85e24337a7df755aa = $(`<div id="html_2acabec0201a95f85e24337a7df755aa" style="width: 100.0%; height: 100.0%;">Kashtabhanjan Multispecialty Hospital, Panchamrut Complex, 1, RV Desai Rd, Vrajpark, Lalbaug, Navapura, Vadodara, Gujarat 390001</div>`)[0];
+                popup_2bd01209be889bf5fdece07b4c0b9d66.setContent(html_2acabec0201a95f85e24337a7df755aa);
+            
+        
+
+        marker_97c265d642655ea614e037be2eea0595.bindPopup(popup_2bd01209be889bf5fdece07b4c0b9d66)
+        ;
+
+        
+    
+    
+            var marker_06f3eb504d2a22fd451561503b4d7e7e = L.marker(
+                [22.289699816264694, 73.20600747908622],
+                {}
+            ).addTo(map_59120cd8d6a1c1fba8807a4e701e5ff3);
+        
+    
+        var popup_47d0808b0f22f52ea173f3b12ed774be = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_68865c58d0a37c865da4c2c0f674d5fa = $(`<div id="html_68865c58d0a37c865da4c2c0f674d5fa" style="width: 100.0%; height: 100.0%;">DAYAMADHAV MULTISPECIALITY HOSPITAL, RV Desai Rd, opp. MAIN GATE GANGOTRI APPARTMENTS, Khanderao Colony, Pratapnagar, Bakrawadi, Navapura, Vadodara, Gujarat 390001</div>`)[0];
+                popup_47d0808b0f22f52ea173f3b12ed774be.setContent(html_68865c58d0a37c865da4c2c0f674d5fa);
+            
+        
+
+        marker_06f3eb504d2a22fd451561503b4d7e7e.bindPopup(popup_47d0808b0f22f52ea173f3b12ed774be)
+        ;
+
+        
+    
+    
+            var marker_f7d4fecf309539edd3e9aaa9913a0357 = L.marker(
+                [22.300122940334475, 73.21202813528082],
+                {}
+            ).addTo(map_59120cd8d6a1c1fba8807a4e701e5ff3);
+        
+    
+        var popup_40f0a06f172b217bd02d00190458575c = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_999645431dff3a2f1fa6453a2e9b4281 = $(`<div id="html_999645431dff3a2f1fa6453a2e9b4281" style="width: 100.0%; height: 100.0%;">Jamnabai General Hospital, 8626+2RC, Panigate Road, Mandvi Cir, Vadodara, Gujarat 390017</div>`)[0];
+                popup_40f0a06f172b217bd02d00190458575c.setContent(html_999645431dff3a2f1fa6453a2e9b4281);
+            
+        
+
+        marker_f7d4fecf309539edd3e9aaa9913a0357.bindPopup(popup_40f0a06f172b217bd02d00190458575c)
+        ;
+
+        
+    
+    
+            var marker_95fedbfc38343a322aeba648bbdc5890 = L.marker(
+                [22.299894632639667, 73.2217699182134],
+                {}
+            ).addTo(map_59120cd8d6a1c1fba8807a4e701e5ff3);
+        
+    
+        var popup_9e1a84e305d955dca535602f178c92e8 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_3b230a662909caec6c88419e7f5ab667 = $(`<div id="html_3b230a662909caec6c88419e7f5ab667" style="width: 100.0%; height: 100.0%;">Vinayak Hospital, 1, Navneet Park Society, Near, Ayurvedic College Rd, Outside Panigate, Vadodara, Gujarat 390019</div>`)[0];
+                popup_9e1a84e305d955dca535602f178c92e8.setContent(html_3b230a662909caec6c88419e7f5ab667);
+            
+        
+
+        marker_95fedbfc38343a322aeba648bbdc5890.bindPopup(popup_9e1a84e305d955dca535602f178c92e8)
+        ;
+
+        
+    
+    
+            var marker_953f98d0bc6743e04fb73e5bc2d3f7dc = L.marker(
+                [22.300936903979707, 73.22483836525494],
+                {}
+            ).addTo(map_59120cd8d6a1c1fba8807a4e701e5ff3);
+        
+    
+        var popup_2b70d73e73072363fdd278fe8369b688 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_766484d2538b76f3c6d803ca807f3003 = $(`<div id="html_766484d2538b76f3c6d803ca807f3003" style="width: 100.0%; height: 100.0%;">Faith Multi-speciality Hospitals Pvt.Ltd, Manav Mandir Society 1, 11/12 WATER TANK, Waghodia Rd, near PANIGATE, Vadodara, Gujarat 390019</div>`)[0];
+                popup_2b70d73e73072363fdd278fe8369b688.setContent(html_766484d2538b76f3c6d803ca807f3003);
+            
+        
+
+        marker_953f98d0bc6743e04fb73e5bc2d3f7dc.bindPopup(popup_2b70d73e73072363fdd278fe8369b688)
+        ;
+
+        
+    
+    
+            var marker_ed1d02f7c03ff9af8208ad28b1b0bc2a = L.marker(
+                [22.264488271701037, 73.19547970494425],
+                {}
+            ).addTo(map_59120cd8d6a1c1fba8807a4e701e5ff3);
+        
+    
+        var popup_15f3dcfd4ca02c400092e3333bf44dde = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_1693f4f5a4d0e7103d17a118261983dc = $(`<div id="html_1693f4f5a4d0e7103d17a118261983dc" style="width: 100.0%; height: 100.0%;">BANKERS SUPERSPECIALITY HOSPITAL, GIDC Road, Tulshi Dham Rd, opposite MAHALAXMI PARTY PLOT, Manjalpur, Vadodara, Gujarat 390011</div>`)[0];
+                popup_15f3dcfd4ca02c400092e3333bf44dde.setContent(html_1693f4f5a4d0e7103d17a118261983dc);
+            
+        
+
+        marker_ed1d02f7c03ff9af8208ad28b1b0bc2a.bindPopup(popup_15f3dcfd4ca02c400092e3333bf44dde)
+        ;
+
+        
+    
+</script>
+</html>
