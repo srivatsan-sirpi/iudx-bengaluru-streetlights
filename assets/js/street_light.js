@@ -49,11 +49,12 @@ async function initMap() {
 function addMarker(latLng, color, label) {
   let url = "/assets/images/";
   url = url + color + ".png";
-  console.log(url);
+
+  let energy_label = label.toString();
   let marker = new google.maps.Marker({
     map: map,
     position: latLng,
-    title: label,
+    title: energy_label,
     icon: url    
   });
   marker.setMap(map);
@@ -102,16 +103,16 @@ async function compute_power(){
 
         if (key === record.deviceID) {
           if (value === 0) {
-            addMarker(latlng, "grey", key)
+            addMarker(latlng, "grey", value)
           }
           else if (value > 0 && value < 801) {
-            addMarker(latlng, "yellow", key)
+            addMarker(latlng, "yellow", value)
           }
           else if (value > 800 && value < 1701) {
-            addMarker(latlng, "orange", key)
+            addMarker(latlng, "orange", value)
           }
           else {
-            addMarker(latlng, "red", key)
+            addMarker(latlng, "red", value)
           }
 
           }
