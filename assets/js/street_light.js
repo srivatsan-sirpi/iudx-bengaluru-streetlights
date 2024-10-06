@@ -1,9 +1,9 @@
 // Initialize and add the map
 
-import street_light_data from '../data/street_lights.json' assert { type: "json" };
-import energy_consumed_data from '../data/energy_consumed.json' assert { type: "json" };
+import street_light_data from '../data/street_lights.json' with { type: 'json' };
+import energy_consumed_data from '../data/energy_consumed.json' with { type: 'json' };
 
-import street_to_device from '../data/streetToDevice.json' assert { type: "json"}; 
+import street_to_device from '../data/streetToDevice.json' with { type: 'json' };
 let map;
 const { GoogleMap } = await google.maps.importLibrary("maps");
 const { AdvancedMarkerView } = await google.maps.importLibrary("marker");
